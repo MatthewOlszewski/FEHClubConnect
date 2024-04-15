@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Search Bar Example</title>
+<style>
+  /* Some basic styling for the search bar */
+  #searchInput {
+    padding: 8px;
+    width: 300px;
+    font-size: 16px;
+  }
+</style>
+</head>
+<body>
+
+<input type="text" id="searchInput" placeholder="Search..." onkeyup="searchFunction()">
+<ul id="results"></ul>
+
+<script>
+function searchFunction() {
+  // Get the input value and convert it to lowercase
+  var input, filter, ul, li, a, i, txtValue;
+  input = document.getElementById('searchInput');
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("results");
+  li = ul.getElementsByTagName('li');
+
+  // Loop through all list items, and hide those who don't match the search reqs
+  for (i = 0; i < li.length; i++) {
+    a = li[i].getElementsByTagName("a")[0];
+    txtValue = a.textContent || a.innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";
+    }
+  }
+}
+</script>
+
+<!-- List of Clubs to search through -->
+<ul id="clubList" style="display: none;">
+  <li><a href="https://activities.osu.edu/involvement/student_organizations/find_a_student_org?i=6d406229-84aa-4591-8dc0-bfefc8ed18e6&v=card&s=Pickleball&c=Columbus&page=0">Pickleball Club</a></li>
+  <li><a href="https://activities.osu.edu/involvement/student_organizations/find_a_student_org?i=837933e9-ef01-48c5-a7d3-adad8677677d&v=card&s=consulting&c=Columbus&page=0">Buckeye Undergraduate Consulting Club</a></li>
+  <li><a href="https://activities.osu.edu/involvement/student_organizations/find_a_student_org?i=02298b6e-a226-4f61-bd34-0f4dc3777158&v=card&s=Auto&c=Columbus&page=0">Buckeye Autocross Club</a></li>
+  <li><a href="https://activities.osu.edu/involvement/student_organizations/find_a_student_org?i=73f11888-9788-40d2-9cb7-3187664556f6&v=card&s=film&c=Columbus&page=0">Animation Club</a></li>
+</ul>
+
+<script>
+// Populating the results list with the items from the dummy list
+var clubList = document.getElementById("clubList").innerHTML;
+document.getElementById("results").innerHTML = clubList;
+</script>
+
+</body>
+</html>
