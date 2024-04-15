@@ -6,7 +6,7 @@ import components.simplewriter.SimpleWriter1L;
 /**
  * Simple HelloWorld program (clear of Checkstyle and SpotBugs warnings).
  *
- * @author P. Bucci
+ * @author Matt Olszewski
  */
 public final class FEHInterestSurvey {
 
