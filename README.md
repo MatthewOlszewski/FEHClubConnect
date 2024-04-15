@@ -9,6 +9,7 @@ Components of Repository:
 The following repository includes two seperate features and corresponding JUnit testing, UML Diagrams, a representation of the software's front end UI design using Figma, documentation detailing the features operating instructions, a flyer, and a pitch video.
 
 Contact Information:
+
 Matt Olszewski - olszewski.58@osu.edu
 Pranav Vuppu - panyamvuppu.1@osu.edu
 Holly Wirsing - wirsing.6@osu.edu
